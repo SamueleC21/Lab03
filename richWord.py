@@ -11,6 +11,7 @@ class RichWord:
     @corretta.setter
     def corretta(self, boolValue):
         # print("setter of parola called" )
+
         self._corretta = boolValue
 
     def __str__(self):
