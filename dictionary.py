@@ -1,8 +1,10 @@
-class Dictionary:
-    def __init__(self):
-        self._dict = set()
 
-    def loadDictionary(self, path, language):
+class Dictionary:
+    def __init__(self, language):
+        self._dict = set()
+        self.lingua = language
+
+    def loadDictionary(self, path):
         with open(path, "r") as file:
             for riga in file:
                 self._dict.add(riga.rstrip())
@@ -10,7 +12,8 @@ class Dictionary:
         #return self.dict
 
     def printAll(self):
-        pass
+        for parola in self._dict:
+            print(parola)
 
 
     @property

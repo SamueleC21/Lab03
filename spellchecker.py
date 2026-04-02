@@ -5,13 +5,18 @@ import multiDictionary as md
 class SpellChecker:
 
     def __init__(self):
-        multiD = md.MultiDictionary()
+        self.multiD = md.MultiDictionary()
 
     def handleSentence(self, txtIn, language):
-        self.multiD.printDic(language)
-        testo = replaceChars(txtIn)
+        #self.multiD.printDic(language)
+        tempo1 = time.time()
+        txtIn = replaceChars(txtIn)
         words = txtIn.split()
-        self.multiD.searchWord(txtIn)
+        parole_sbagliate = self.multiD.searchWord(words, language)
+        for parola in parole_sbagliate:
+            print(parola)
+        tempo2 = time.time()
+        print(f"il tempo necessario è {tempo2 - tempo1}")
 
     def printMenu(self):
         print("______________________________\n" +

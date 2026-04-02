@@ -1,10 +1,9 @@
-import dictionary
+
 import spellchecker
 
 
 
 sc = spellchecker.SpellChecker()
-#d = dictionary.Dictionary()
 
 while(True):
     sc.printMenu()
@@ -17,20 +16,21 @@ while(True):
     if int(txtIn) == 1:
         print("Inserisci la tua frase in Italiano\n")
         testo = input()
-        #d.loadDictionary("italian.txt")
         sc.handleSentence(testo,"italian")
+
         continue
 
     if int(txtIn) == 2:
         print("Inserisci la tua frase in Inglese\n")
         testo = input()
-        sc.handleSentence(txtIn,"english")
+        sc.handleSentence(testo,"english")
         continue
 
     if int(txtIn) == 3:
         print("Inserisci la tua frase in Spagnolo\n")
         testo = input()
-        sc.handleSentence(txtIn,"spanish")
+
+        sc.handleSentence(testo,"spanish")
         continue
 
     if int(txtIn) == 4:
